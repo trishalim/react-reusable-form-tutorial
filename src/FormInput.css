@@ -1,0 +1,16 @@
+.FormInput {
+  margin-bottom: 1rem;
+}
+
+.FormInput label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.FormInput input {
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+}
