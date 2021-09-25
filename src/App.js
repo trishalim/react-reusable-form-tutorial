@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import './App.css';
 import Form from './Form';
 import FormInput from './FormInput';
 
 function App() {
+  const [message, setMessage] = useState('');
+
+  const submit = (form) => {
+    setMessage(`Thanks for signing up, ${form.firstName} ${form.lastName}! We've sent you an email to ${form.emailAddress}.`);
+  };
+
   return (
     <div className="App">
       <h1>Sign Up</h1>
 
-      <Form>
+      <Form submit={submit}>
         <FormInput 
           label="First Name" 
           name="firstName" />
@@ -23,6 +30,8 @@ function App() {
           type="password" 
           name="password" />
       </Form>
+
+      <p>{message}</p>
     </div>
   );
 }

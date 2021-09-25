@@ -5,7 +5,7 @@ export const FormContext = React.createContext({
 });
 
 function Form(props) {
-  const { children } = props;
+  const { children, submit = () => {} } = props;
 
   const [form, setForm] = useState({
     firstName: '',
@@ -19,18 +19,12 @@ function Form(props) {
     // Get the new value of this field
     const { name, value } = event.target;
 
-    console.log({name, value});
-
     // Update state
     // Assign new value to the appropriate form field
     setForm({
       ...form,
       [name]: value
     });
-  };
-
-  const submit = () => {
-    console.log('Form: ', form);
   };
 
   return (
@@ -42,7 +36,7 @@ function Form(props) {
         {children}
       </FormContext.Provider>
 
-      <button type="button" onClick={submit}>
+      <button type="button" onClick={() => submit(form)}>
         Submit
       </button>
     </form>
