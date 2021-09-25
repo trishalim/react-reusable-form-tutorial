@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Form.css';
 
 export const FormContext = React.createContext({
   form: {}
@@ -23,7 +24,7 @@ function Form(props) {
   };
 
   return (
-    <form>
+    <form className="Form">
       <FormContext.Provider value={{
         form,
         handleFormChange
