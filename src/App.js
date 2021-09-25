@@ -8,6 +8,8 @@ function App() {
 
       <FormInput label="First Name" />
       <FormInput label="Last Name" />
+      <FormInput label="Email Address" type="email" />
+      <FormInput label="Password" type="password" />
     </div>
   );
 }

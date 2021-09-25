@@ -2,7 +2,7 @@ import './FormInput.css';
 import { useState } from 'react';
 
 function FormInput(props) {
-  const { label } = props;
+  const { label, type = 'text' } = props;
 
   const [value, setValue] = useState('');
   const onChange = (event) => {
@@ -13,7 +13,7 @@ function FormInput(props) {
     <div className="FormInput">
       <label>{label}</label>
       <input
-        type="text" 
+        type={type}
         value={value}
         onChange={onChange}
       />
