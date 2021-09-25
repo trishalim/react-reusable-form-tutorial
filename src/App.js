@@ -11,26 +11,21 @@ function App() {
   });
 
   const handleFormChange = (event) => {
-    // Clone form because we need to modify it
-    const updatedForm = { ...form };
-
     // Get the name of the field that caused this change event
     // Get the new value of this field
     const { name, value } = event.target;
 
+    // Update state
     // Assign new value to the appropriate form field
-    const updatedForm = {
+    setForm({
       ...form,
       [name]: value
-    };
-
-    console.log('Form changed: ', updatedForm);
-
-    // Update state
-    setForm(updatedForm);
+    });
   };
 
-  if (!form) return <></>;
+  const submit = () => {
+    console.log('Form: ', form);
+  };
 
   return (
     <div className="App">
@@ -58,6 +53,10 @@ function App() {
         name="password" 
         value={form.password}
         onChange={handleFormChange} />
+
+      <button type="button" onClick={submit}>
+        Submit
+      </button>
     </div>
   );
 }
