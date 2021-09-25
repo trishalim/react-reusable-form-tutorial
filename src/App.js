@@ -39,6 +39,23 @@ function App() {
       </Form>
 
       <p>{message}</p>
+
+      <h2>Log In</h2>
+      <Form
+        submit={(form) => {
+          alert(`Logged in as ${form.username}!`);
+        }}
+        initialValues={{
+          username: '',
+          password: ''
+        }}>
+        <FormInput
+          label="Username"
+          name="username" />
+        <FormInput
+          label="Password"
+          name="password" />
+      </Form>
     </div>
   );
 }
