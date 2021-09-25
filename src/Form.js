@@ -5,14 +5,9 @@ export const FormContext = React.createContext({
 });
 
 function Form(props) {
-  const { children, submit = () => {} } = props;
+  const { children, submit = () => {}, initialValues } = props;
 
-  const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    emailAddress: '',
-    password: '',
-  });
+  const [form, setForm] = useState(initialValues);
 
   const handleFormChange = (event) => {
     // Get the name of the field that caused this change event
