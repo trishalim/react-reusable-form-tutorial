@@ -10,26 +10,18 @@ function App() {
       <Form>
         <FormInput 
           label="First Name" 
-          name="firstName" 
-          value={form.firstName}
-          onChange={handleFormChange} />
+          name="firstName" />
         <FormInput 
           label="Last Name" 
-          name="lastName" 
-          value={form.lastName}
-          onChange={handleFormChange} />
+          name="lastName" />
         <FormInput 
           label="Email Address" 
           type="email" 
-          name="emailAddress" 
-          value={form.emailAddress}
-          onChange={handleFormChange} />
+          name="emailAddress" />
         <FormInput 
           label="Password" 
           type="password" 
-          name="password" 
-          value={form.password}
-          onChange={handleFormChange} />
+          name="password" />
       </Form>
     </div>
   );

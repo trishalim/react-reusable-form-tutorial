@@ -1,13 +1,16 @@
+import { useContext } from 'react';
+import { FormContext } from './Form';
 import './FormInput.css';
 
 function FormInput(props) {
   const {
     label, 
     type = 'text', 
-    name, 
-    value, 
-    onChange
+    name,
   } = props;
+
+  const formContext = useContext(FormContext);
+  const { form, handleFormChange } = formContext;
 
   return (
     <div className="FormInput">
@@ -15,8 +18,8 @@ function FormInput(props) {
       <input
         type={type}
         name={name}
-        value={value}
-        onChange={onChange}
+        value={form[name]}
+        onChange={handleFormChange}
       />
     </div>
   )
